@@ -1,10 +1,25 @@
 # PadDataGenerator
 
-`PadDataGenerator` is an application for generating [PadData](../../StepManiaLibrary/docs/PadData.md) files and [StepGraph](../../StepManiaLibrary/docs/StepGraphs.md) files for a [ChartType](../../StepManiaLibrary/docs/ChartType.md) from simple input.
+`PadDataGenerator` is an application for generating [PadData](https://github.com/PerryAsleep/StepManiaLibrary/blob/main/StepManiaLibrary/docs/PadData.md) files and [StepGraph](https://github.com/PerryAsleep/StepManiaLibrary/blob/main/StepManiaLibrary/docs/StepGraphs.md) files for a [ChartType](https://github.com/PerryAsleep/StepManiaLibrary/blob/main/StepManiaLibrary/docs/ChartType.md) from simple input.
 
 ## Usage
 
-Double-click `PadDataGenerator.exe`
+Double-click `PadDataGenerator.exe` to generate new files from a built binary.
+
+Alternatively, run `build_pad_data.bat` to build the Release binary, run it, and copy the resulting data to the `StepManiaLibrary` folder.
+
+## Building From Source
+Building from source requires Windows 10 or greater and Microsoft Visual Studio Community 2022.
+
+Clone the repository and init submodules.
+```
+git clone https://github.com/PerryAsleep/PadDataGenerator.git
+git submodule update --init --recursive
+```
+
+Add an environment variable for `FUMEN_DEVENV` set to the path of your Visual Studio `devenv.exe`, e.g. `C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\devenv.exe`. This is necessary for running `build_pad_data.bat`.
+
+Open `PadDataGenerator.sln` and build through Visual Studio.
 
 ## Configuration
 
@@ -19,7 +34,6 @@ Double-click `PadDataGenerator.exe`
 - **MaxYSeparationCrossoverBeforeStretch**: Optional. Integer type. Defualt `2`. The maximum separation in Y before considering two arrows to result in a stretch position when crossed over.
 - **MaxXSeparationBracket**: Optional. Integer type. Defualt `1`. The maximum separation in X to consider two arrows to be bracketable together.
 - **MaxYSeparationBracket**: Optional. Integer type. Defualt `1`. The maximum separation in Y to consider two arrows to be bracketable together.
-- **YTravelDistanceCompensation**: Optional. Double type. Defualt `0.5`. The `YTravelDistanceCompensation` value to set in the resulting `PadData`.
 - **GenerateStepGraph**: Optional. Boolean type. Defualt `true`. Whether or not to generate a `StepGraph` file for this `ChartType`.
 
 ### Example `input.json`
