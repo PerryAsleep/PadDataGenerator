@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FumenTests", "StepManiaLibr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StepManiaLibrary", "StepManiaLibrary\StepManiaLibrary\StepManiaLibrary.csproj", "{0442A9A8-0AD1-4275-9575-B30E71F2A57E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PadDataGenerator", "PadDataGenerator\PadDataGenerator.csproj", "{F84CC3AB-D06F-4277-A317-20DEBF01E35D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PadDataGenerator", "PadDataGenerator\PadDataGenerator.csproj", "{F84CC3AB-D06F-4277-A317-20DEBF01E35D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StepManiaLibraryTests", "StepManiaLibrary\StepManiaLibraryTests\StepManiaLibraryTests.csproj", "{1D6C7634-1F39-4FC0-B8F3-97FD0A9544E1}"
 EndProject
