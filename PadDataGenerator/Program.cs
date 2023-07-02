@@ -59,7 +59,7 @@ namespace PadDataGenerator
 			[JsonInclude] public List<Position> Positions;
 		}
 
-		private static readonly JsonSerializerOptions SerializationOptions = new JsonSerializerOptions()
+		private static readonly JsonSerializerOptions SerializationOptions = new ()
 		{
 			Converters =
 			{
@@ -79,10 +79,8 @@ namespace PadDataGenerator
 			Input input;
 			try
 			{
-				using (var openStream = File.OpenRead(Fumen.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, InputFileName)))
-				{
-					input = JsonSerializer.Deserialize<Input>(openStream, SerializationOptions);
-				}
+				await using var openStream = File.OpenRead(Fumen.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, InputFileName));
+				input = JsonSerializer.Deserialize<Input>(openStream, SerializationOptions);
 			}
 			catch (Exception e)
 			{
@@ -104,7 +102,7 @@ namespace PadDataGenerator
 				try
 				{
 					var jsonString = JsonSerializer.Serialize(padData, SerializationOptions);
-					File.WriteAllText(Fumen.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, outputFileName), jsonString);
+					await File.WriteAllTextAsync(Fumen.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, outputFileName), jsonString);
 				}
 				catch (Exception e)
 				{
@@ -723,7 +721,7 @@ namespace PadDataGenerator
 					tieredPositions.Add(new List<StartingPosition>());
 				}
 
-				tieredPositions[tieredPositions.Count - 1].Add(position);
+				tieredPositions[^1].Add(position);
 				lastRating = position.TierRating;
 			}
 
