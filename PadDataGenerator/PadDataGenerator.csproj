@@ -2,17 +2,19 @@
 	<PropertyGroup>
 		<TargetFramework>net7.0</TargetFramework>
 		<OutputType>Exe</OutputType>
-		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<GenerateAssemblyInfo>True</GenerateAssemblyInfo>
 		<AssemblyTitle>PadDataGenerator</AssemblyTitle>
 		<Product>PadDataGenerator</Product>
 		<Copyright>Copyright ©  2023</Copyright>
 		<AssemblyVersion>1.0.0.0</AssemblyVersion>
 		<FileVersion>1.0.0.0</FileVersion>
+		<ApplicationIcon>icon.ico</ApplicationIcon>
 	</PropertyGroup>
 	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
 		<NoWarn>CS0649</NoWarn>
 	</PropertyGroup>
 	<ItemGroup>
+		<Content Include="icon.ico" />
 		<Content Include="input.json">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>

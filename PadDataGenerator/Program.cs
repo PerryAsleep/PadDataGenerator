@@ -182,7 +182,7 @@ internal class Program
 		{
 			Logger.StartUp(new Logger.Config
 			{
-				WriteToConsole = false,
+				WriteToConsole = true,
 				WriteToFile = false,
 				WriteToBuffer = false,
 			});

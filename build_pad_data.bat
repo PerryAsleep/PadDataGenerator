@@ -8,8 +8,8 @@
 "%FUMEN_DEVENV%" PadDataGenerator.sln /Build Release /Project PadDataGenerator/PadDataGenerator.csproj
 
 @REM Execute the binary to build PadData and StepGraphs
-.\PadDataGenerator\bin\Release\PadDataGenerator.exe
+.\PadDataGenerator\bin\Release\net7.0\PadDataGenerator.exe
 
 @REM Copy the results
-echo F|xcopy /Y /F /I /exclude:ExcludedPadDataFilesList.txt .\PadDataGenerator\bin\Release\*.json .\StepManiaLibrary\StepManiaLibrary
-echo F|xcopy /Y /F /I .\PadDataGenerator\bin\Release\*.fsg .\StepManiaLibrary\StepManiaLibrary
+echo F|xcopy /Y /F /I /exclude:ExcludedPadDataFilesList.txt .\PadDataGenerator\bin\Release\net7.0\*.json .\StepManiaLibrary\StepManiaLibrary
+echo F|xcopy /Y /F /I .\PadDataGenerator\bin\Release\net7.0\*.fsg .\StepManiaLibrary\StepManiaLibrary
