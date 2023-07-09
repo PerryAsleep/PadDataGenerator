@@ -6,7 +6,7 @@ const string fumen7Z = "FUMEN_7Z";
 
 const string appName = "PadDataGenerator";
 const string projectName = "PadDataGenerator";
-const string readmeName = "Readme.md";
+const string readmeName = "README.md";
 const string relativeProjectRoot = "..\\..\\..\\..";
 const string relativeReadme = $"..\\..\\..\\..\\{readmeName}";
 const string relativeSlnPath = $"{relativeProjectRoot}\\{appName}.sln";
