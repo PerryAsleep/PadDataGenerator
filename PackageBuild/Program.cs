@@ -7,8 +7,10 @@ const string fumen7Z = "FUMEN_7Z";
 const string appName = "PadDataGenerator";
 const string projectName = "PadDataGenerator";
 const string readmeName = "README.md";
+const string licenseName = "LICENSE";
 const string relativeProjectRoot = "..\\..\\..\\..";
 const string relativeReadme = $"..\\..\\..\\..\\{readmeName}";
+const string relativeLicense = $"..\\..\\..\\..\\{licenseName}";
 const string relativeSlnPath = $"{relativeProjectRoot}\\{appName}.sln";
 const string relativeExeFolderPath = $"{relativeProjectRoot}\\{projectName}\\bin\\Release\\net7.0";
 const string relativeExePath = $"{relativeExeFolderPath}\\{appName}.exe";
@@ -116,6 +118,10 @@ CopyDirectory(relativeExeFolderPath, tempDirectory);
 // Copy readme.
 var destinationReadme = Path.Combine(tempDirectory, readmeName);
 File.Copy(relativeReadme, destinationReadme);
+
+// Copy license.
+var destinationLicense = Path.Combine(tempDirectory, licenseName);
+File.Copy(relativeLicense, destinationLicense);
 
 // Remove existing release package
 var packageFile =
